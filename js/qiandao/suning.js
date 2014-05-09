@@ -16,13 +16,11 @@
                             return;
                         }
 
-                        console.log(data);
-
                         if (data.pointGetInfo.pointsQuantity) {
                             localStorage.setItem('suning_status', today);
                             localStorage.setItem('suning_points', data.pointValue.totalPoint);
                             console.log('[qiandao][suning] signIn OK.');
-                            console.log(data);
+                            // console.log(data);
                         }
                     }
                 });

@@ -1,5 +1,6 @@
 {
   "name": "自动签到",
+  "short_name": "签到",
   "version": "0.0.2",
   "manifest_version": 2,
   "description": "登陆访问时自动在点评，一号店，苏宁等网站签到。",
@@ -23,6 +24,11 @@
     {
       "matches": [ "http://*.suning.com/*" ],
       "js": [ "js/zepto.min.js", "js/qiandao/suning.js" ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [ "http://*.xiami.com/*" ],
+      "js": [ "js/zepto.min.js", "js/qiandao/xiami.js" ],
       "run_at": "document_end"
     }
   ],
