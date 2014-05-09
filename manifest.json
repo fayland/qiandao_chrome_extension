@@ -1,6 +1,6 @@
 {
   "name": "自动签到",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "登陆访问时自动在点评，一号店，苏宁等网站签到。",
   "homepage_url": "http://fayland.me/",
