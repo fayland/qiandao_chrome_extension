@@ -10,6 +10,7 @@
                     if (data.signInResult) {
                         localStorage.setItem('dianping_status', today);
                         console.log('[qiandao][dianping] signIn OK.');
+                        console.log(data);
                     } else {
                         console.log('[qiandao][dianping] signIn failed.');
                     }
