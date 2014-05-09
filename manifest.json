@@ -24,6 +24,11 @@
       "matches": [ "http://vip.yhd.com/*" ],
       "js": [ "js/zepto.min.js", "js/qiandao/yhd.js" ],
       "run_at": "document_end"
+    },
+    {
+      "matches": [ "http://*.dianping.com/*" ],
+      "js": [ "js/zepto.min.js", "js/qiandao/dianping.js" ],
+      "run_at": "document_end"
     }
   ],
   "background": {
