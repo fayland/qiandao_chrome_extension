@@ -1,8 +1,37 @@
 <!doctype html>
 <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf8" />
     <script src="/js/zepto.min.js"></script>
     <script src="browser_action.js"></script>
+    <style>
+    #mainPopup {
+        padding: 10px;
+        height: 200px;
+        width: 400px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    </style>
 </head>
 
 <div id="mainPopup">
+
+<table border='0'>
+    <tr><th>网站</th><th>最后签到时间</th><th>点数</th><th>-</th></tr>
+    <tr>
+        <td>一号店</td><td id='yhd_status'></td><td id='yhd_points'>-</td>
+        <td><a href='http://www.yhd.com/' target='_blank'>访问</a></td>
+    </tr>
+    <tr>
+        <td>点评</td><td id='dianping_status'></td><td id='dianping_points'>-</td>
+        <td><a href='http://www.dianping.com/' target='_blank'>访问</a></td>
+    </tr>
+    <tr>
+        <td>苏宁</td><td id='suning_status'></td><td id='suning_points'>-</td>
+        <td><a href='http://www.suning.com/' target='_blank'>访问</a></td>
+    </tr>
+    <tr>
+        <td>虾米</td><td id='xiami_status'></td><td id='suning_points'>-</td>
+        <td><a href='http://www.xiami.com/' target='_blank'>访问</a></td>
+    </tr>
+</table>
 </div>
