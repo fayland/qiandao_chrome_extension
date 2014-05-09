@@ -4,7 +4,7 @@
         // only do it when login
         if (1) { // no way to find expect another request with https://passport.yhd.com/publicPassport/isLogin.do
             var today = (new Date()).toDateString();
-            var status = '';//localStorage.getItem('yhd_status');
+            var status = localStorage.getItem('yhd_status');
             if (! (status && today === status)) {
                 $.ajax({
                     type     : "POST",

@@ -2,7 +2,7 @@
   "name": "自动签到",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "登陆访问时自动在点评，一号店等网站签到。",
+  "description": "登陆访问时自动在点评，一号店，苏宁等网站签到。",
   "homepage_url": "http://fayland.me/",
   "icons": {
     "16": "icons/icon16.png",
@@ -18,6 +18,11 @@
     {
       "matches": [ "http://*.dianping.com/*" ],
       "js": [ "js/zepto.min.js", "js/qiandao/dianping.js" ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [ "http://*.suning.com/*" ],
+      "js": [ "js/zepto.min.js", "js/qiandao/suning.js" ],
       "run_at": "document_end"
     }
   ],
