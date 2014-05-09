@@ -2,7 +2,7 @@
   "name": "自动签到",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "自动在淘宝，天猫，点评，苏宁，一号店等网站签到。",
+  "description": "登陆访问时自动在点评，一号店等网站签到。",
   "homepage_url": "http://fayland.me/",
   "icons": {
     "16": "icons/icon16.png",
@@ -10,16 +10,6 @@
   },
   "default_locale": "en",
   "content_scripts": [
-    {
-      "matches": [ "http://*.taobao.com/*" ],
-      "js": [ "js/zepto.min.js", "js/qiandao/taobao.js" ],
-      "run_at": "document_end"
-    },
-    {
-      "matches": [ "http://ka.tmall.com/*" ],
-      "js": [ "js/zepto.min.js", "js/qiandao/tmall.js" ],
-      "run_at": "document_end"
-    },
     {
       "matches": [ "http://*.yhd.com/*" ],
       "js": [ "js/zepto.min.js", "js/qiandao/yhd.js" ],
