@@ -1,14 +1,31 @@
 {
   "name": "自动签到",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "manifest_version": 2,
-  "description": "Qiandao automatically",
+  "description": "自动在淘宝，天猫，点评，苏宁，一号店等网站签到。",
   "homepage_url": "http://fayland.me/",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png"
   },
   "default_locale": "en",
+  "content_scripts": [
+    {
+      "matches": [ "http://*.taobao.com/*" ],
+      "js": [ "js/zepto.min.js", "js/qiandao/taobao.js" ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [ "http://ka.tmall.com/*" ],
+      "js": [ "js/zepto.min.js", "js/qiandao/tmall.js" ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [ "http://vip.yhd.com/*" ],
+      "js": [ "js/zepto.min.js", "js/qiandao/yhd.js" ],
+      "run_at": "document_end"
+    }
+  ],
   "background": {
     "page": "src/bg/background.html",
     "persistent": true
@@ -16,7 +33,7 @@
   "options_page": "src/options/index.html",
   "browser_action": {
     "default_icon": "icons/icon19.png",
-    "default_title": "Findmjob Updates",
+    "default_title": "签到消息",
     "default_popup": "src/browser_action/browser_action.html"
   },
   "permissions": [
