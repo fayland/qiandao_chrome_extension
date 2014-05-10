@@ -6,9 +6,7 @@
             var today = (new Date()).toDateString();
             if (! (status && today === status)) {
                 // need cookie
-                chrome.runtime.sendMessage({method: "taobao_qiandao"}, function(res) {
-                    console.log(res);
-                });
+                chrome.runtime.sendMessage({method: "taobao_qiandao"}, function(res) {});
             } else {
                 console.log('[qiandao][taobao] already signIn today.');
             }
