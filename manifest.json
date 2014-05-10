@@ -3,7 +3,7 @@
   "short_name": "签到",
   "version": "0.0.2",
   "manifest_version": 2,
-  "description": "登陆访问时自动在点评，一号店，苏宁，虾米等网站签到。",
+  "description": "登陆访问时自动在淘宝，点评，一号店，苏宁，虾米等网站签到。",
   "homepage_url": "http://fayland.me/",
   "icons": {
     "16": "icons/icon16.png",
@@ -11,6 +11,11 @@
   },
   "default_locale": "en",
   "content_scripts": [
+    {
+      "matches": [ "http://*.taobao.com/*" ],
+      "js": [ "js/zepto.min.js", "js/qiandao/taobao.js" ],
+      "run_at": "document_end"
+    },
     {
       "matches": [ "http://*.yhd.com/*" ],
       "js": [ "js/zepto.min.js", "js/qiandao/yhd.js" ],
