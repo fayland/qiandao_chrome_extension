@@ -85,6 +85,7 @@
                             if (data.no == 0 || data.no == 1101) {
                                 var today = (new Date()).toDateString();
                                 localStorage.setItem("tieba_" + encodeURIComponent(request.kw) + "_status", today);
+                                localStorage.setItem("tieba_status", today);
                             }
                         },
                         error: function(err) {

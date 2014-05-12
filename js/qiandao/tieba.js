@@ -18,8 +18,5 @@
                 }
             });
         }
-
-
-
     });
 }(window, document, Zepto);
