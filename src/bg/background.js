@@ -26,6 +26,37 @@
                     });
                 }
             });
+        } else if (request.method == 'weibo_qiandao') {
+            chrome.cookies.getAll({domain:"weibo.com"}, function (cookies){
+                var is_logined = 0;
+                for (var i in cookies) {
+                    if (cookies[i].name == 'login_sid_t') {
+                        is_logined = 1;
+                    }
+                }
+                console.log('is_logined:' + is_logined);
+                if (is_logined) {
+                    var url = 'http://vdisk.weibo.com/task/checkIn';
+                    $.ajax({
+                        type     : "POST",
+                        url      : url,
+                        async    : !1,
+                        dataType : 'json',
+                        success  : function(data) {
+                            console.log(data);
+                            // {"errcode":0,"msg":null,"data":[268,2]}
+                            if (data.errcode == 0) { // 1 is OK, 2 is already done
+                                var today = (new Date()).toDateString();
+                                localStorage.setItem('weibo_status', today);
+                                localStorage.setItem('weibo_points', data.data[1]);
+                            }
+                        },
+                        error: function(err) {
+                            console.log(err);
+                        }
+                    });
+                }
+            });
         } else if (request.method == "getLocalStorage") {
             sendResponse({data: localStorage[request.key]});
         } else if (request.method == "setLocalStorage") {
@@ -35,5 +66,4 @@
             sendResponse({}); // snub them.
         }
     });
-
 }(window, document, Zepto);

@@ -1,7 +1,7 @@
 {
   "name": "自动签到",
   "short_name": "签到",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "manifest_version": 2,
   "description": "访问时如果已登陆则自动在淘宝，点评，一号店，苏宁，虾米等网站签到。",
   "homepage_url": "http://fayland.me/",
@@ -34,6 +34,16 @@
     {
       "matches": [ "http://*.xiami.com/*" ],
       "js": [ "js/zepto.min.js", "js/qiandao/xiami.js" ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [ "http://*.weibo.com/*" , "http://weibo.com/*"],
+      "js": [ "js/zepto.min.js", "js/qiandao/weibo.js" ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [ "http://tieba.baidu.com/*" ],
+      "js": [ "js/zepto.min.js", "js/qiandao/baidu_tieba.js" ],
       "run_at": "document_end"
     }
   ],
