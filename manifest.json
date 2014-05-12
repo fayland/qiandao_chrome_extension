@@ -43,7 +43,7 @@
     },
     {
       "matches": [ "http://tieba.baidu.com/*" ],
-      "js": [ "js/zepto.min.js", "js/qiandao/baidu_tieba.js" ],
+      "js": [ "js/zepto.min.js", "js/qiandao/tieba.js" ],
       "run_at": "document_end"
     }
   ],
