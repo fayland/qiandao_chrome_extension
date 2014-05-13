@@ -37,10 +37,9 @@
                 }
                 console.log('is_logined:' + is_logined);
                 if (is_logined) {
-                    var url = 'http://vdisk.weibo.com/task/checkIn';
                     $.ajax({
                         type     : "POST",
-                        url      : url,
+                        url      : 'http://vdisk.weibo.com/task/checkIn',
                         async    : !1,
                         dataType : 'json',
                         success  : function(data) {
@@ -49,7 +48,7 @@
                             if (data.errcode == 0) {
                                 var today = (new Date()).toDateString();
                                 localStorage.setItem('weibo_status', today);
-                                localStorage.setItem('weibo_points', data.data[1]);
+                                localStorage.setItem('weibo_points', data.data[0]);
                             }
                         },
                         error: function(err) {
