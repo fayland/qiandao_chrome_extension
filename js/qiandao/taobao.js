@@ -1,5 +1,4 @@
 !function(win, doc, $){
-
     $(doc).ready(function() {
         chrome.runtime.sendMessage({method: "getLocalStorage", key: "taobao_status"}, function(res) {
             var status = res.data;
