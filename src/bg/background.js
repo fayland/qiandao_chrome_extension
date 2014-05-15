@@ -42,16 +42,16 @@
                     var timestamp = (new Date()).getTime();
                     $.ajax({
                         type     : "GET",
-                        url      : 'http://www.tmall.com/go/rgn/ka/sign.php?modal=ka&_ksTS=' + timestamp + '_172',
-                        dataType : 'jsonp',
+                        url      : 'http://www.tmall.com/go/rgn/ka/sign.php?modal=ka&_ksTS=' + timestamp + '_205&callback=jsonp206',
+                        dataType : 'text',
                         success  : function(data) {
-                            alert(JSON.stringify(data));
-                            // {"login":"true","currentLevel":"v5","nextLevel":"v6","nextMaxCoin":40,"code":1,"coinOld":9145,"coinNew":9155,"daysTomorrow":2,"coinTomorrow":"15","auth":true,"isTake":"false","takeAmount":"","friendNum":"0","switcher":"true"}
-                            if (data.code == 1 || data.code == 2) { // 1 is OK, 2 is already done
-                                var today = (new Date()).toDateString();
-                                localStorage.setItem('tmall_status', today);
-                                localStorage.setItem('tmall_points', data.coinNew);
-                            }
+                            // alert(data);
+                            // _initMemberInfoCallback({"availablePoints":2441,"activeStatus":3,"newMessage":0,"lastMessage":"","lastMessageUrl":"","lastMessageId":0,"lastMessageType":0,"taskId":0,"messagePopup":"true","newMsgList":{"4":0,"3":0,"2":0,"1":0}})
+                            // if (data.code == 1 || data.code == 2) { // 1 is OK, 2 is already done
+                            //     var today = (new Date()).toDateString();
+                            //     localStorage.setItem('tmall_status', today);
+                            //     localStorage.setItem('tmall_points', data.coinNew);
+                            // }
                         },
                         error: function(err) {
                             console.log(err);
@@ -79,6 +79,9 @@
                         url      : 'http://vdisk.weibo.com/task/checkIn',
                         async    : !1,
                         dataType : 'json',
+                        beforeSend : function (xhr) {
+                            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                        },
                         success  : function(data) {
                             console.log(data);
                             // {"errcode":0,"msg":null,"data":[268,2]}
