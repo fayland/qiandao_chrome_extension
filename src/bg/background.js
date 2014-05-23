@@ -140,7 +140,7 @@
         }
 
         if (request.method === 'xiami_qiandao') {
-            chrome.cookies.getAll({domain:"weibo.com"}, function (cookies){
+            chrome.cookies.getAll({domain:"xiami.com"}, function (cookies){
                 var is_logined = 0;
                 for (var i in cookies) {
                     if (cookies[i].name === 'user') {
