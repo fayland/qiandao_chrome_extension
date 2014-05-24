@@ -32,8 +32,13 @@
       "run_at": "document_end"
     },
     {
-      "matches": [ "http://*.xiami.com/*" ],
+      "matches": [ "http://*.xiami.com/*", "http://xiami.com/*" ],
       "js": [ "js/zepto.min.js", "js/qiandao/xiami.js" ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [ "http://*.weibo.com/*", "http://weibo.com/*" ],
+      "js": [ "js/zepto.min.js", "js/qiandao/weibo.js" ],
       "run_at": "document_end"
     },
     {

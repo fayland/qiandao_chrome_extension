@@ -62,44 +62,6 @@
             return;
         }
 
-        if (request.method === 'weibo_qiandao') {
-            return;
-            chrome.cookies.getAll({domain:"weibo.com"}, function (cookies){
-                var is_logined = 0;
-                for (var i in cookies) {
-                    if (cookies[i].name === 'login_sid_t') {
-                        is_logined = 1;
-                        break;
-                    }
-                }
-                console.log('is_logined:' + is_logined);
-                if (is_logined) {
-                    $.ajax({
-                        type     : "POST",
-                        url      : 'http://vdisk.weibo.com/task/checkIn',
-                        async    : !1,
-                        dataType : 'json',
-                        beforeSend : function (xhr) {
-                            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-                        },
-                        success  : function(data) {
-                            console.log(data);
-                            // {"errcode":0,"msg":null,"data":[268,2]}
-                            if (data.errcode == 0) {
-                                var today = (new Date()).toDateString();
-                                localStorage.setItem('weibo_status', today);
-                                localStorage.setItem('weibo_points', data.data[0]);
-                            }
-                        },
-                        error: function(err) {
-                            console.log(err);
-                        }
-                    });
-                }
-            });
-            return;
-        }
-
         if (request.method === 'tieba_qiandao') {
             chrome.cookies.getAll({domain:"tieba.baidu.com"}, function (cookies){
                 var is_logined = 0;
@@ -132,31 +94,6 @@
                         },
                         error: function(err) {
                             console.log(err);
-                        }
-                    });
-                }
-            });
-            return;
-        }
-
-        if (request.method === 'xiami_qiandao') {
-            chrome.cookies.getAll({domain:"xiami.com"}, function (cookies){
-                var is_logined = 0;
-                for (var i in cookies) {
-                    if (cookies[i].name === 'user') {
-                        is_logined = 1;
-                        break;
-                    }
-                }
-                if (is_logined) {
-                    $.ajax({
-                        type     : "POST",
-                        url      : 'http://www.xiami.com/task/signin',
-                        dataType : 'html',
-                        success  : function(data) {
-                            if (parseInt(data) === 1 || parseInt(data) === 2) {
-                                localStorage.setItem('xiami_status', today);
-                            }
                         }
                     });
                 }

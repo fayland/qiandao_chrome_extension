@@ -11,7 +11,8 @@
             'dianping_status',
             'suning_status', 'suning_points',
             'xiami_status',
-            'tieba_status'
+            'tieba_status',
+            'weipan_status', 'weipan_points'
         ];
         $.each(ele, function(i, v) {
             $('#' + v).text(localStorage.getItem(v));
