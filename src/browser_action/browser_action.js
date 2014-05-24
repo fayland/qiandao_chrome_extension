@@ -12,7 +12,8 @@
             'suning_status', 'suning_points',
             'xiami_status',
             'tieba_status',
-            'weipan_status', 'weipan_points'
+            'weipan_status', 'weipan_points',
+            'fund123_status'
         ];
         $.each(ele, function(i, v) {
             $('#' + v).text(localStorage.getItem(v));
