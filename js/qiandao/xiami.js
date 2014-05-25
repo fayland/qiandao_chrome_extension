@@ -12,9 +12,12 @@
                         url      : 'http://www.xiami.com/task/signin',
                         dataType : 'html',
                         success  : function(data) {
-                            if (parseInt(data) === 1 || parseInt(data) === 2) {
+                            if (parseInt(data) > 0) {
                                 chrome.runtime.sendMessage({
                                     method: "setLocalStorage", key: "xiami_status", val: today
+                                }, function(res) {});
+                                chrome.runtime.sendMessage({
+                                    method: "setLocalStorage", key: "xiami_points", val: parseInt(data)
                                 }, function(res) {});
                             }
                         }
