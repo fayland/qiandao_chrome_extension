@@ -1,7 +1,7 @@
 {
   "name": "自动签到",
   "short_name": "签到",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "manifest_version": 2,
   "description": "访问时如果已登陆则在淘宝，百度贴吧，点评，一号店，苏宁，虾米，微盘，数米基金网等网站自动签到。",
   "homepage_url": "http://fayland.me/",
