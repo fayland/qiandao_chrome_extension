@@ -29,39 +29,6 @@
             return;
         }
 
-        if (request.method === 'tmall_qiandao') {
-            return;
-            chrome.cookies.getAll({domain:"tmall.com"}, function (cookies){
-                var token;
-                for (var i in cookies) {
-                    if (cookies[i].name == '_tb_token_') {
-                        token = cookies[i].value;
-                    }
-                }
-                if (token) {
-                    var timestamp = (new Date()).getTime();
-                    $.ajax({
-                        type     : "GET",
-                        url      : 'http://www.tmall.com/go/rgn/ka/sign.php?modal=ka&_ksTS=' + timestamp + '_205&callback=jsonp206',
-                        dataType : 'text',
-                        success  : function(data) {
-                            // alert(data);
-                            // _initMemberInfoCallback({"availablePoints":2441,"activeStatus":3,"newMessage":0,"lastMessage":"","lastMessageUrl":"","lastMessageId":0,"lastMessageType":0,"taskId":0,"messagePopup":"true","newMsgList":{"4":0,"3":0,"2":0,"1":0}})
-                            // if (data.code == 1 || data.code == 2) { // 1 is OK, 2 is already done
-                            //     var today = (new Date()).toDateString();
-                            //     localStorage.setItem('tmall_status', today);
-                            //     localStorage.setItem('tmall_points', data.coinNew);
-                            // }
-                        },
-                        error: function(err) {
-                            console.log(err);
-                        }
-                    });
-                }
-            });
-            return;
-        }
-
         if (request.method === 'tieba_qiandao') {
             chrome.cookies.getAll({domain:"tieba.baidu.com"}, function (cookies){
                 var is_logined = 0;

@@ -3,7 +3,7 @@
   "short_name": "签到",
   "version": "0.0.8",
   "manifest_version": 2,
-  "description": "访问时如果已登陆则在淘宝，百度贴吧，点评，一号店，苏宁，虾米，微盘，数米基金网等网站自动签到。",
+  "description": "访问时如果已登陆则在淘宝，百度贴吧，点评，一号店，苏宁，爱奇艺，虾米，微盘，数米基金网等网站自动签到。",
   "homepage_url": "http://fayland.me/",
   "icons": {
     "16": "icons/icon16.png",
@@ -49,6 +49,11 @@
     {
       "matches": [ "http://*.fund123.cn/*" ],
       "js": [ "js/zepto.min.js", "js/qiandao/fund123.js" ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [ "http://*.iqiyi.com/*", "http://iqiyi.com/*" ],
+      "js": [ "js/zepto.min.js", "js/qiandao/iqiyi.js" ],
       "run_at": "document_end"
     }
   ],
