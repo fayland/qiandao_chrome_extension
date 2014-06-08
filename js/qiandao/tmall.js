@@ -12,9 +12,11 @@
                             chrome.runtime.sendMessage({
                                 method: "setLocalStorage", key: "tmall_mei_status", val: today
                             }, function(res) {});
-                            chrome.runtime.sendMessage({
-                                method: "setLocalStorage", key: "tmall_mei_points", val: t.availableDays
-                            }, function(res) {});
+                            if (t.availableDays > 0) {
+                                chrome.runtime.sendMessage({
+                                    method: "setLocalStorage", key: "tmall_mei_points", val: t.availableDays
+                                }, function(res) {});
+                            }
                         }
                     }
 

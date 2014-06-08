@@ -14,7 +14,8 @@
             'tieba_status',
             'weipan_status', 'weipan_points',
             'fund123_status',
-            'iqiyi_status', 'iqiyi_points'
+            'iqiyi_status', 'iqiyi_points',
+            'tmall_mei_status', 'tmall_mei_points'
         ];
         $.each(ele, function(i, v) {
             $('#' + v).text(localStorage.getItem(v));
