@@ -10,7 +10,7 @@
                 }
                 if (token) {
                     var timestamp = (new Date()).getTime();
-                    var url = 'http://vip.taobao.com/home/grant_everyday_coin.htm?checkCode=null&t=' + timestamp + '&_tb_token_=' + token;
+                    var url = 'http://api.taojinbi.taobao.com/json/sign_in_everyday.htm?checkCode=null&t=' + timestamp + '&_tb_token_=' + token;
                     $.ajax({
                         type     : "GET",
                         url      : url,
