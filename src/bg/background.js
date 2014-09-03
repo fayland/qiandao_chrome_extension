@@ -1,26 +1,27 @@
 !function(win, doc, $){
     chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-        if (request.method === 'taobao_qiandao') {
-            chrome.cookies.getAll({domain:"taobao.com"}, function (cookies){
-                var token;
+
+        if (request.method === 'xiaomi_qiandao') {
+            chrome.cookies.getAll({domain:".xiaomi.cn"}, function (cookies){
+                var is_logined = 0;
                 for (var i in cookies) {
-                    if (cookies[i].name == '_tb_token_') {
-                        token = cookies[i].value;
+                    if (cookies[i].name === 'userId') {
+                        is_logined = 1;
+                        break;
                     }
                 }
-                if (token) {
-                    var timestamp = (new Date()).getTime();
-                    var url = 'http://api.taojinbi.taobao.com/json/sign_in_everyday.htm?checkCode=null&t=' + timestamp + '&_tb_token_=' + token;
+                if (is_logined) {
                     $.ajax({
-                        type     : "GET",
-                        url      : url,
+                        type     : "POST",
+                        url      : 'http://bbs.xiaomi.cn/qiandao/index/share',
                         dataType : 'json',
                         success  : function(data) {
-                            // {"login":"true","currentLevel":"v5","nextLevel":"v6","nextMaxCoin":40,"code":1,"coinOld":9145,"coinNew":9155,"daysTomorrow":2,"coinTomorrow":"15","auth":true,"isTake":"false","takeAmount":"","friendNum":"0","switcher":"true"}
-                            if (data.code == 1 || data.code == 2) { // 1 is OK, 2 is already done
+                            if (data.code == '200' || data.code == '202') {
                                 var today = (new Date()).toDateString();
-                                localStorage.setItem('taobao_status', today);
-                                localStorage.setItem('taobao_points', data.coinNew);
+                                localStorage.setItem("xiaomi_status", today);
+                                if (data.code == '200') {
+                                    localStorage.setItem("xiaomi_points", data.user.tdays);
+                                }
                             }
                         }
                     });
