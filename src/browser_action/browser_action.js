@@ -9,7 +9,6 @@
             'taobao_status', 'taobao_points',
             'yhd_status',
             'dianping_status',
-            'suning_status', 'suning_points',
             'xiami_status', 'xiami_points',
             'tieba_status',
             'weipan_status', 'weipan_points',

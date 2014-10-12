@@ -32,11 +32,6 @@
       "run_at": "document_end"
     },
     {
-      "matches": [ "http://*.suning.com/*" ],
-      "js": [ "js/zepto.min.js", "js/qiandao/suning.js" ],
-      "run_at": "document_end"
-    },
-    {
       "matches": [ "http://*.xiami.com/*", "http://xiami.com/*" ],
       "js": [ "js/zepto.min.js", "js/qiandao/xiami.js" ],
       "run_at": "document_end"
