@@ -6,7 +6,7 @@
             var today = (new Date()).toDateString();
             if (! (status && today === status)) {
                 // check if logined
-                if (doc.cookie.match(/login_sid_t=/)) {
+                if (doc.cookie.match(/SSOLoginState=/)) {
                     $.ajax({
                         type     : "POST",
                         url      : 'http://vdisk.weibo.com/task/checkIn',

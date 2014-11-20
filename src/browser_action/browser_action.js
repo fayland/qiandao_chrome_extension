@@ -14,7 +14,6 @@
             'weipan_status', 'weipan_points',
             'fund123_status',
             'iqiyi_status', 'iqiyi_points',
-            'tmall_mei_status', 'tmall_mei_points',
             'etao_status', 'etao_points',
             'xiaomi_status', 'xiaomi_points'
         ];
