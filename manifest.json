@@ -60,6 +60,11 @@
       "matches": [ "http://*.xiaomi.cn/*" ],
       "js": [ "js/zepto.min.js", "js/qiandao/xiaomi.js" ],
       "run_at": "document_end"
+    },
+    {
+      "matches": [ "http://*.smzdm.com/*" ],
+      "js": [ "js/zepto.min.js", "js/qiandao/smzdm.js" ],
+      "run_at": "document_end"
     }
   ],
   "background": {
