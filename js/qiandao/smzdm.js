@@ -2,7 +2,6 @@
     $(doc).ready(function() {
         chrome.runtime.sendMessage({method: "getLocalStorage", key: "smzdm_status"}, function(res) {
             var status = res.data;
-            status = '';
             var today = (new Date()).toDateString();
             if (! (status && today === status)) {
                 // check if logined
