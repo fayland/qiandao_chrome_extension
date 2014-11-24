@@ -15,7 +15,8 @@
             'fund123_status',
             'iqiyi_status', 'iqiyi_points',
             'etao_status', 'etao_points',
-            'xiaomi_status', 'xiaomi_points'
+            'xiaomi_status', 'xiaomi_points',
+            'smzdm_status', 'smzdm_points'
         ];
         $.each(ele, function(i, v) {
             $('#' + v).text(localStorage.getItem(v));
